@@ -2,33 +2,48 @@ package arrayList;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Scanner;
 
 public class Animal {
 	public static void main(String args[]) {
 		ArrayList <String> list1 = new ArrayList<String>();//Only Strings
-		ArrayList <String> list2 = new ArrayList<String>();
+		
+		String name1, name2, name3, name4;
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter the first animal");
+		name1 = scanner.nextLine();
+		System.out.println("Enter the second animal");
+		name2 = scanner.nextLine();
+		System.out.println("Enter the third animal");
+		name3 = scanner.nextLine();
+		System.out.println("Enter the fourth animal");
+		name4 = scanner.nextLine();
+		scanner.close();
+		System.out.println("Done!, the animals were added to the farm!");
 		
 		//Add element of the Array List
-		list1.add("Cat");
-		list1.add("Dog");
-		list1.add("Mouse");
-		list1.add("Lizard");
+		list1.add(name1);
+		list1.add(name2);
+		list1.add(name3);
+		list1.add(name4);
 		list1.add("Cow");
 		list1.add("Chiken");
 		list1.add("Pig");
 		list1.add("Horse");
 		list1.add("Fox");
-
-		interator(list1);
 		
+		System.out.println("The animals in the farm are: ");
+		
+		interator(list1);
+		System.out.println("Let's remove one animal");
 		//Array remove
 		list1.remove(2);
-		
+		System.out.println("The animals in the farm are: ");
 		interator(list1);
-		
+		System.out.println("Let's change the position #2");
 		//Update Array list
 		list1.set(2, "bird");
-				
+		System.out.println("The animals in the farm are: ");
 		interator(list1);
 		
 		//Iterate in ArrayList
@@ -62,8 +77,6 @@ public class Animal {
 		
 		// Clear all elements of the ArrayList
 		list1.clear();
-		
-		
 		
 		interator(list1);
 	}
